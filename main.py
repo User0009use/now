@@ -1,22 +1,17 @@
-from flask import Flask, request, render_template
-from requests import get 
+from flask import Flask, request
+from requests import get, post
+from re import sub
 
 app = Flask(__name__)
 
 @app.route("/")
 def root():
-    return "/root"
-
-@app.route("/get")
-def get_url():
-    url = None
+    url = request.args.get("url")
     try:
-      url = request.args.get("url")
-      html = get(url).text
+      html = get(url).text 
       
       return html
-    except Exception as e:
-      return f"{e}"
-    return " Oops!"
+    except:
+       return "Opps!"
 
-app.run('0.0.0.0')
+app.run("0.0.0.0")
