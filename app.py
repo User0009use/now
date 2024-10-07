@@ -142,8 +142,8 @@ class Main:
         self.run(*args, **kwargs)
 
     def run(self, *args, **kwargs):
-        print(*args)
-        print(**kwargs)
+        print("ARGS: \n\n",*args)
+        print("KWARGS: \n\n", **kwargs)
         start_proxy(self.host, self.port)
 
 app = Main()
