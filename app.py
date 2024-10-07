@@ -136,6 +136,10 @@ class Main:
     def __init__(self) -> None:
         self.host = ""
         self.port = 8080
+        
+    def __call__(self, *args, **kwargs):
+        print("Chamando a instância com:", *args, **kwargs)
+        self.run(*args, **kwargs)
 
     def run(self, *args, **kwargs):
         print(*args)
