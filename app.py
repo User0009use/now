@@ -113,7 +113,7 @@ def _read_write(client_socket, target_socket):
                     out.send(data)
                     #print(len(data))
                     count = 0
-        print("... > ", count)
+        #print("... > ", count)
         if count == 1: #time_out_max
             break
     target_socket.close()
